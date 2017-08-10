@@ -7,14 +7,14 @@ Nike Sin Shox male,sintetico,masculino ,corrida,norte,110
 Nike Sin Shox male,sintetico,masculino ,corrida,nordeste,120
 Nike Sin Shox male,sintetico,masculino ,corrida,sul,160
 Nike Sin Shox male,sintetico,masculino ,corrida,suldeste,185
-Nike Beu male,sintetico,masculino,dia_dia,norte,120
-Nike Beu male,sintetico,masculino,dia_dia,nordeste,110
-Nike Beu male,sintetico,masculino,dia_dia,sul,40
-Nike Beu male,sintetico,masculino,dia_dia,suldeste,60
-Nike Nyx male,couro,masculino,dia_dia,norte,35
-Nike Nyx male,couro,masculino,dia_dia,nordeste,12
-Nike Nyx male,couro,masculino,dia_dia,sul,160
-Nike Nyx male,couro,masculino,dia_dia,suldeste,186
+Casual Beu male,sintetico,masculino,dia_dia,norte,120
+Casual Beu male,sintetico,masculino,dia_dia,nordeste,110
+Casual Beu male,sintetico,masculino,dia_dia,sul,40
+Casual Beu male,sintetico,masculino,dia_dia,suldeste,60
+Casual Nyx male,couro,masculino,dia_dia,norte,35
+Casual Nyx male,couro,masculino,dia_dia,nordeste,12
+Casual Nyx male,couro,masculino,dia_dia,sul,160
+Casual Nyx male,couro,masculino,dia_dia,suldeste,186
 Nike 360 female,tecido,feminino,corrida,norte,30
 Nike 360 female,tecido,feminino,corrida,nordeste,40
 Nike 360 female,tecido,feminino,corrida,sul,63
@@ -23,11 +23,11 @@ Nike Sin Shox female,Sintetico,feminino,corrida,norte,80
 Nike Sin Shox female,Sintetico,feminino,corrida,nordeste,75
 Nike Sin Shox female,Sintetico,feminino,corrida,sul,127
 Nike Sin Shox female,Sintetico,feminino,corrida,suldeste,114
-Nike Beu female,Sintetico,feminino,dia_dia,norte,220
-Nike Beu female,Sintetico,feminino,dia_dia,nordeste,204
-Nike Beu female,Sintetico,feminino,dia_dia,sul,156
-Nike Beu female,Sintetico,feminino,dia_dia,suldeste,148
-Nike Nyx female,couro,feminino,dia_dia,norte,102
-Nike Nyx female,couro,feminino,dia_dia,nordeste,100
-Nike Nyx female,couro,feminino,dia_dia,sul,290
-Nike Nyx female,couro,feminino,dia_dia,suldeste,288
+Casual Beu female,Sintetico,feminino,dia_dia,norte,220
+Casual Beu female,Sintetico,feminino,dia_dia,nordeste,204
+Casual Beu female,Sintetico,feminino,dia_dia,sul,156
+Casual Beu female,Sintetico,feminino,dia_dia,suldeste,148
+Casual Nyx female,couro,feminino,dia_dia,norte,102
+Casual Nyx female,couro,feminino,dia_dia,nordeste,100
+Casual Nyx female,couro,feminino,dia_dia,sul,290
+Casual Nyx female,couro,feminino,dia_dia,suldeste,288

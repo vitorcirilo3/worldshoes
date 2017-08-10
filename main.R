@@ -3,8 +3,6 @@ library(plotly)
 
 shoes_vendas <- read.csv("shoes.csv")
 
-shoes_midia <- read.csv("midia.csv")
-
 shoes_vendas[with(shoes_vendas, order(shoes_vendas$quantidade_vendida)), ]
 
 
@@ -186,5 +184,204 @@ p <- plot_ly(vendas, x = ~regioes, y = ~norte, type = 'bar', name = 'norte') %>%
 p
 
 
+########################################################################
+########################################################################
+####### redes sociais
+shoes_midia <- read.csv("midia.csv")
+shoes_midia$post <- toupper(shoes_midia$post)
 
+casual_nyx <- shoes_midia$post[grepl("*CASUAL NYX*", shoes_midia$post)]
+casual_beu <- shoes_midia$post[grepl("*CASUAL BEU*", shoes_midia$post)]
+nike_sin_shox<- shoes_midia$post[grepl("*NIKE SIN SHOX", shoes_midia$post)]
+nike_360 <- shoes_midia$post[grepl("*NIKE 360*", shoes_midia$post)]
+
+
+casual_nyx_negative <- casual_nyx[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_nyx)] 
+casual_nyx_positive <- casual_nyx[grepl("*[^O] GOSTEI*|*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_nyx)] 
+
+casual_beu_negative <- casual_beu[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_beu)] 
+casual_beu_positive <- casual_beu[grepl("*[^O] GOSTEI*|*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_beu)] 
+
+nike_sin_shox_negative <- nike_sin_shox[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_sin_shox)] 
+nike_sin_shox_positive <- nike_sin_shox[grepl("*[^O] GOSTEI*|*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_sin_shox)] 
+
+nike_360_negative <- nike_360[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_360)] 
+nike_360_positive <- nike_360[grepl("*[^O] GOSTEI*|*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_360)] 
+
+
+products <- c("CASUAL NYX", "CASUAL BEU", "NIKE SIN SHOX", "NIKE 360")
+negative <- c(length(casual_nyx_negative), length(casual_beu_negative), length(nike_sin_shox_negative),length(nike_360_negative))
+positive <- c(length(casual_nyx_positive), length(casual_beu_positive), length(nike_sin_shox_positive),length(nike_360_positive))
+data <- data.frame(products, SF_Zoo, LA_Zoo)
+
+p <- plot_ly(data, x = ~products, y = ~positive, type = 'bar', name = 'positive') %>%
+  add_trace(y = ~negative, name = 'negative') %>%
+  layout(title = "Avaliação dos sapatos nas redes sociais",
+         yaxis = list(title = 'Count'), barmode = 'group')
+
+p
+
+
+########################################################################
+########################################################################
+####### redes sociais - NORTE
+shoes_midia <- read.csv("midia.csv")
+shoes_midia$post <- toupper(shoes_midia$post)
+
+shoes_midia <- shoes_midia[shoes_midia$regiao == "norte", ]
+
+casual_nyx <- shoes_midia$post[grepl("*CASUAL NYX*", shoes_midia$post)]
+casual_beu <- shoes_midia$post[grepl("*CASUAL BEU*", shoes_midia$post)]
+nike_sin_shox<- shoes_midia$post[grepl("*NIKE SIN SHOX", shoes_midia$post)]
+nike_360 <- shoes_midia$post[grepl("*NIKE 360*", shoes_midia$post)]
+
+
+casual_nyx_negative <- casual_nyx[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_nyx)] 
+casual_nyx_positive <- casual_nyx[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*|*AMEI*", casual_nyx)] 
+
+casual_beu_negative <- casual_beu[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_beu)] 
+casual_beu_positive <- casual_beu[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*|*AMEI*", casual_beu)] 
+
+nike_sin_shox_negative <- nike_sin_shox[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_sin_shox)] 
+nike_sin_shox_positive <- nike_sin_shox[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*|*AMEI*", nike_sin_shox)] 
+
+nike_360_negative <- nike_360[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_360)] 
+nike_360_positive <- nike_360[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*|*AMEI*", nike_360)] 
+
+
+products <- c("CASUAL NYX", "CASUAL BEU", "NIKE SIN SHOX", "NIKE 360")
+negative <- c(length(casual_nyx_negative), length(casual_beu_negative), length(nike_sin_shox_negative),length(nike_360_negative))
+positive <- c(length(casual_nyx_positive), length(casual_beu_positive), length(nike_sin_shox_positive),length(nike_360_positive))
+data <- data.frame(products, SF_Zoo, LA_Zoo)
+
+p <- plot_ly(data, x = ~products, y = ~positive, type = 'bar', name = 'positive') %>%
+  add_trace(y = ~negative, name = 'negative') %>%
+  layout(title = "Avaliação dos sapatos nas redes sociais - região norte",
+         yaxis = list(title = 'Count'), barmode = 'group')
+
+p
+
+shoes_vendas[with(shoes_vendas, order(shoes_vendas$quantidade_vendida)), ]
+
+
+########################################################################
+########################################################################
+####### redes sociais - NORDESTE
+shoes_midia <- read.csv("midia.csv")
+shoes_midia$post <- toupper(shoes_midia$post)
+
+shoes_midia <- shoes_midia[shoes_midia$regiao == "nordeste", ]
+
+casual_nyx <- shoes_midia$post[grepl("*CASUAL NYX*", shoes_midia$post)]
+casual_beu <- shoes_midia$post[grepl("*CASUAL BEU*", shoes_midia$post)]
+nike_sin_shox<- shoes_midia$post[grepl("*NIKE SIN SHOX", shoes_midia$post)]
+nike_360 <- shoes_midia$post[grepl("*NIKE 360*", shoes_midia$post)]
+
+
+casual_nyx_negative <- casual_nyx[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_nyx)] 
+casual_nyx_positive <- casual_nyx[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_nyx)] 
+
+casual_beu_negative <- casual_beu[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_beu)] 
+casual_beu_positive <- casual_beu[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_beu)] 
+
+nike_sin_shox_negative <- nike_sin_shox[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_sin_shox)] 
+nike_sin_shox_positive <- nike_sin_shox[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_sin_shox)] 
+
+nike_360_negative <- nike_360[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_360)] 
+nike_360_positive <- nike_360[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_360)] 
+
+
+products <- c("CASUAL NYX", "CASUAL BEU", "NIKE SIN SHOX", "NIKE 360")
+negative <- c(length(casual_nyx_negative), length(casual_beu_negative), length(nike_sin_shox_negative),length(nike_360_negative))
+positive <- c(length(casual_nyx_positive), length(casual_beu_positive), length(nike_sin_shox_positive),length(nike_360_positive))
+data <- data.frame(products, SF_Zoo, LA_Zoo)
+
+p <- plot_ly(data, x = ~products, y = ~positive, type = 'bar', name = 'positive') %>%
+  add_trace(y = ~negative, name = 'negative') %>%
+  layout(title = "Avaliação dos sapatos nas redes sociais - região nordeste",
+         yaxis = list(title = 'Count'), barmode = 'group')
+
+p
+
+
+
+########################################################################
+########################################################################
+####### redes sociais - SUL
+shoes_midia <- read.csv("midia.csv")
+shoes_midia$post <- toupper(shoes_midia$post)
+
+shoes_midia <- shoes_midia[shoes_midia$regiao == "sul", ]
+
+casual_nyx <- shoes_midia$post[grepl("*CASUAL NYX*", shoes_midia$post)]
+casual_beu <- shoes_midia$post[grepl("*CASUAL BEU*", shoes_midia$post)]
+nike_sin_shox<- shoes_midia$post[grepl("*NIKE SIN SHOX", shoes_midia$post)]
+nike_360 <- shoes_midia$post[grepl("*NIKE 360*", shoes_midia$post)]
+
+
+casual_nyx_negative <- casual_nyx[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_nyx)] 
+casual_nyx_positive <- casual_nyx[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_nyx)] 
+
+casual_beu_negative <- casual_beu[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_beu)] 
+casual_beu_positive <- casual_beu[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_beu)] 
+
+nike_sin_shox_negative <- nike_sin_shox[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_sin_shox)] 
+nike_sin_shox_positive <- nike_sin_shox[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_sin_shox)] 
+
+nike_360_negative <- nike_360[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_360)] 
+nike_360_positive <- nike_360[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_360)] 
+
+
+products <- c("CASUAL NYX", "CASUAL BEU", "NIKE SIN SHOX", "NIKE 360")
+negative <- c(length(casual_nyx_negative), length(casual_beu_negative), length(nike_sin_shox_negative),length(nike_360_negative))
+positive <- c(length(casual_nyx_positive), length(casual_beu_positive), length(nike_sin_shox_positive),length(nike_360_positive))
+data <- data.frame(products, SF_Zoo, LA_Zoo)
+
+p <- plot_ly(data, x = ~products, y = ~positive, type = 'bar', name = 'positive') %>%
+  add_trace(y = ~negative, name = 'negative') %>%
+  layout(title = "Avaliação dos sapatos nas redes sociais - região sul",
+         yaxis = list(title = 'Count'), barmode = 'group')
+
+p
+
+
+
+########################################################################
+########################################################################
+####### redes sociais - SULDESTE
+shoes_midia <- read.csv("midia.csv")
+shoes_midia$post <- toupper(shoes_midia$post)
+
+shoes_midia <- shoes_midia[shoes_midia$regiao == "suldeste", ]
+
+casual_nyx <- shoes_midia$post[grepl("*CASUAL NYX*", shoes_midia$post)]
+casual_beu <- shoes_midia$post[grepl("*CASUAL BEU*", shoes_midia$post)]
+nike_sin_shox<- shoes_midia$post[grepl("*NIKE SIN SHOX", shoes_midia$post)]
+nike_360 <- shoes_midia$post[grepl("*NIKE 360*", shoes_midia$post)]
+
+
+casual_nyx_negative <- casual_nyx[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_nyx)] 
+casual_nyx_positive <- casual_nyx[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_nyx)] 
+
+casual_beu_negative <- casual_beu[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", casual_beu)] 
+casual_beu_positive <- casual_beu[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", casual_beu)] 
+
+nike_sin_shox_negative <- nike_sin_shox[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_sin_shox)] 
+nike_sin_shox_positive <- nike_sin_shox[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_sin_shox)] 
+
+nike_360_negative <- nike_360[grepl("*NÃO GOSTEI*|*NÃO RECOMENTO*|*PIOR SAPATO*|*NÃO COMPREM*|*SAPATO RUIM*", nike_360)] 
+nike_360_positive <- nike_360[grepl("*OTIMO SAPATO*|*MELHOR SAPATO*|*EXCELENTE RUIM*|GOSTEI*", nike_360)] 
+
+
+products <- c("CASUAL NYX", "CASUAL BEU", "NIKE SIN SHOX", "NIKE 360")
+negative <- c(length(casual_nyx_negative), length(casual_beu_negative), length(nike_sin_shox_negative),length(nike_360_negative))
+positive <- c(length(casual_nyx_positive), length(casual_beu_positive), length(nike_sin_shox_positive),length(nike_360_positive))
+data <- data.frame(products, SF_Zoo, LA_Zoo)
+
+p <- plot_ly(data, x = ~products, y = ~positive, type = 'bar', name = 'positive') %>%
+  add_trace(y = ~negative, name = 'negative') %>%
+  layout(title = "Avaliação dos sapatos nas redes sociais - região suldeste",
+         yaxis = list(title = 'Count'), barmode = 'group')
+
+p
 
