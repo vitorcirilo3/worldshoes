@@ -1,33 +1,33 @@
 nome,material,genero,modalidade,regiao,quantidade_vendida
-Nike 360,tecido,masculino,corrida,norte,5
-Nike 360,tecido,masculino,corrida,nordeste,10
-Nike 360,tecido,masculino,corrida,sul,15
-Nike 360,tecido,masculino,corrida,suldeste,12
-Nike Couro Shox,sintetico,masculino ,corrida,norte,110
-Nike Couro Shox,sintetico,masculino ,corrida,nordeste,120
-Nike Couro Shox,sintetico,masculino ,corrida,sul,110
-Nike Couro Shox,sintetico,masculino ,corrida,suldeste,115
-Nike Beu,sintetico,masculino,dia_dia,norte,120
-Nike Beu,sintetico,masculino,dia_dia,nordeste,110
-Nike Beu,sintetico,masculino,dia_dia,sul,20
-Nike Beu,sintetico,masculino,dia_dia,suldeste,30
-Nike Nyx ,couro,masculino,dia_dia,norte,35
-Nike Nyx ,couro,masculino,dia_dia,nordeste,12
-Nike Nyx ,couro,masculino,dia_dia,sul,120
-Nike Nyx ,couro,masculino,dia_dia,suldeste,126
-Nike 360,tecido,feminino,corrida,norte,30
-Nike 360,tecido,feminino,corrida,nordeste,40
-Nike 360,tecido,feminino,corrida,sul,43
-Nike 360,tecido,feminino,corrida,suldeste,12
-Nike Couro Shox,Sintetico,feminino,corrida,norte,80
-Nike Couro Shox,Sintetico,feminino,corrida,nordeste,75
-Nike Couro Shox,Sintetico,feminino,corrida,sul,77
-Nike Couro Shox,Sintetico,feminino,corrida,suldeste,74
-Nike Beu,Sintetico,feminino,dia_dia,norte,220
-Nike Beu,Sintetico,feminino,dia_dia,nordeste,204
-Nike Beu,Sintetico,feminino,dia_dia,sul,106
-Nike Beu,Sintetico,feminino,dia_dia,suldeste,108
-Nike Nyx ,couro,feminino,dia_dia,norte,102
-Nike Nyx ,couro,feminino,dia_dia,nordeste,100
-Nike Nyx ,couro,feminino,dia_dia,sul,230
-Nike Nyx ,couro,feminino,dia_dia,suldeste,240
+Nike 360 male,tecido,masculino,corrida,norte,5
+Nike 360 male,tecido,masculino,corrida,nordeste,10
+Nike 360 male,tecido,masculino,corrida,sul,35
+Nike 360 male,tecido,masculino,corrida,suldeste,32
+Nike Sin Shox male,sintetico,masculino ,corrida,norte,110
+Nike Sin Shox male,sintetico,masculino ,corrida,nordeste,120
+Nike Sin Shox male,sintetico,masculino ,corrida,sul,160
+Nike Sin Shox male,sintetico,masculino ,corrida,suldeste,185
+Nike Beu male,sintetico,masculino,dia_dia,norte,120
+Nike Beu male,sintetico,masculino,dia_dia,nordeste,110
+Nike Beu male,sintetico,masculino,dia_dia,sul,40
+Nike Beu male,sintetico,masculino,dia_dia,suldeste,60
+Nike Nyx male,couro,masculino,dia_dia,norte,35
+Nike Nyx male,couro,masculino,dia_dia,nordeste,12
+Nike Nyx male,couro,masculino,dia_dia,sul,160
+Nike Nyx male,couro,masculino,dia_dia,suldeste,186
+Nike 360 female,tecido,feminino,corrida,norte,30
+Nike 360 female,tecido,feminino,corrida,nordeste,40
+Nike 360 female,tecido,feminino,corrida,sul,63
+Nike 360 female,tecido,feminino,corrida,suldeste,42
+Nike Sin Shox female,Sintetico,feminino,corrida,norte,80
+Nike Sin Shox female,Sintetico,feminino,corrida,nordeste,75
+Nike Sin Shox female,Sintetico,feminino,corrida,sul,127
+Nike Sin Shox female,Sintetico,feminino,corrida,suldeste,114
+Nike Beu female,Sintetico,feminino,dia_dia,norte,220
+Nike Beu female,Sintetico,feminino,dia_dia,nordeste,204
+Nike Beu female,Sintetico,feminino,dia_dia,sul,156
+Nike Beu female,Sintetico,feminino,dia_dia,suldeste,148
+Nike Nyx female,couro,feminino,dia_dia,norte,102
+Nike Nyx female,couro,feminino,dia_dia,nordeste,100
+Nike Nyx female,couro,feminino,dia_dia,sul,290
+Nike Nyx female,couro,feminino,dia_dia,suldeste,288
